@@ -19,7 +19,7 @@ function setup() {
     gainText = createDiv('gain: ' + 0);
     resText = createDiv('res: ' + 0);
     freqText = createDiv('freq: ' + 0);
-    ctxOn = createButton('turn on Audio').position(width/2, height/2);
+    ctxOn = createButton('turn on Audio').position(width/2, height/2).hide(); //not needed anymore?
     ctxOn.mousePressed(() => {
   	ctx.resume().then(() => {
   	  console.log('Playback resumed successfully');
