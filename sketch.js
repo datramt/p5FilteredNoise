@@ -1,4 +1,7 @@
+let ctx;
+
 function setup() {
+    ctx = getAudioContext();
     createCanvas(400, 250);
 
     //create p5sound objects
@@ -16,6 +19,13 @@ function setup() {
     gainText = createDiv('gain: ' + 0);
     resText = createDiv('res: ' + 0);
     freqText = createDiv('freq: ' + 0);
+    ctxOn = createButton('turn on Audio').position(width/2, height/2);
+    ctxOn.mousePressed(() => {
+  	ctx.resume().then(() => {
+  	  console.log('Playback resumed successfully');
+      ctxOn.hide();
+  	});
+  });
 
     //style text
     textstyle = selectAll('div');
